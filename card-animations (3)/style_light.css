@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+html {
+  --grey-1: rgb(226, 226, 236);
+  --grey-2: rgb(206, 206, 216);
+  --grey-3: rgb(150, 150, 160);
+  --grey-4: rgb(130, 130, 140);
+  --gradient-1: linear-gradient(315deg, #b1dcff 0%, #d9eeff 74%);
+  --gradient-2: linear-gradient(315deg, #d9eeff 0%, #b1dcff 74%);
+}
+
+body {
+  padding: 20px;
+}
+
+hr {
+  border: 1px solid var(--grey-1);
+  margin: 15px 0px 5px 0px;
+}
+
+h1 {
+  color: black;
+  margin: 10px 0px 8px 0px;
+}
+
+.card {
+  display: grid;
+  grid-auto-rows: 30px 1fr auto;
+  gap: 10px;
+
+  background-color: #ebf9ff;
+  width: 300px;
+  height: 1fr;
+  padding: 20px;
+
+  border-radius: 7px;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.top-nav {
+  display: grid;
+  grid-template-columns: 1fr 25px 25px;
+}
+
+.top-nav .icon {
+  width: 20px;
+  opacity: 0.3;
+}
+
+.top-nav .icon:hover {
+  opacity: 0.5;
+}
+
+.top-nav .icon:active {
+  opacity: 0.8;
+}
+
+.profile .me {
+  filter: grayscale(100%);
+}
+
+.profile .job-title {
+  text-transform: uppercase;
+  color: #3377af;
+}
+
+.profile p {
+  font-size: 12px;
+  color: black;
+  margin-top: 15px;
+}
+
+.profile .button {
+  font-size: 1rem;
+  height: 40px;
+  width: 140px;
+  color: #3377af;
+
+  margin-top: 15px;
+  border-radius: 20px;
+  background: var(--gradient-1);
+  border: 0px;
+  box-shadow: 2px 2px 7px rgba(0, 38, 110, 0.2);
+}
+
+.profile .button:hover {
+  background: var(--gradient-2);
+}
+
+.profile .button:active {
+  animation: rock 300ms ease-in-out;
+}
+
+@keyframes rock {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+.me {
+  object-fit: cover;
+  object-position: 0px 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile .me:hover {
+  animation: spin 500ms ease-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: scaleX(-1);
+  }
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 10px;
+}
+
+.socials .icon {
+  background: var(--gradient-1);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0.5;
+
+  box-shadow: 2px 2px 7px rgba(0, 38, 110, 0.3);
+}
+
+.socials .icon:hover {
+  animation: grow 300ms ease-out;
+  opacity: 0.8;
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.socials .followers {
+  font-size: 12px;
+  color: var(--grey-4);
+  margin-top: 10px;
+}
+
+.socials .follow-figures {
+  color: #3377af;
+  margin-top: 8px;
+  font-weight: 2;
+  font-size: 1.2rem;
+}
